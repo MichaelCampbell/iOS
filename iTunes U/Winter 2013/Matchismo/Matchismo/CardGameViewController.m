@@ -8,7 +8,7 @@
 
 #import "CardGameViewController.h"
 #import "Deck.h"
-#import "Card.h"
+#import "PlayingCardDeck.h"
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
@@ -17,6 +17,14 @@
 @end
 
 @implementation CardGameViewController
+
+@synthesize deck = _deck;
+
+- (Deck *)deck
+{
+	if (!_deck) _deck = [[PlayingCardDeck alloc] init];
+	return _deck;
+}
 
 - (void)setFlipCount:(int)flipCount
 {
