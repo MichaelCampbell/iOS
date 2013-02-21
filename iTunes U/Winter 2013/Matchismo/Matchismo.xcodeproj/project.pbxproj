@@ -23,6 +23,7 @@
 		209DD1C716D1A80D00257667 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 209DD1C616D1A80D00257667 /* Deck.m */; };
 		209DD1CA16D1A82300257667 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 209DD1C916D1A82300257667 /* PlayingCard.m */; };
 		209DD1CD16D1A83E00257667 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 209DD1CC16D1A83E00257667 /* PlayingCardDeck.m */; };
+		27A0E7B016D6C968009F6A9D /* joker.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A0E7AF16D6C968009F6A9D /* joker.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		209DD1C916D1A82300257667 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		209DD1CB16D1A83E00257667 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		209DD1CC16D1A83E00257667 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		27A0E7AF16D6C968009F6A9D /* joker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joker.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		205F8A4016D188780054E129 = {
 			isa = PBXGroup;
 			children = (
+				27A0E7AF16D6C968009F6A9D /* joker.png */,
 				205F8A5216D188780054E129 /* Matchismo */,
 				205F8A4B16D188780054E129 /* Frameworks */,
 				205F8A4A16D188780054E129 /* Products */,
@@ -213,6 +216,7 @@
 				205F8A6116D188780054E129 /* Default@2x.png in Resources */,
 				205F8A6316D188780054E129 /* Default-568h@2x.png in Resources */,
 				205F8A6616D188780054E129 /* MainStoryboard.storyboard in Resources */,
+				27A0E7B016D6C968009F6A9D /* joker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

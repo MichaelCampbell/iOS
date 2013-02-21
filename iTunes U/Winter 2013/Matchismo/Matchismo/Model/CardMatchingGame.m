@@ -44,6 +44,10 @@
 	return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
+#define FLIP_COST 1
+#define MISMATCH_PENALTY 2
+#define MATCH_BONUS 4
+
 - (void)flipCardAtIndex:(NSUInteger)index
 {
 	Card *card = [self cardAtIndex:index];
@@ -56,10 +60,15 @@
 					if (matchScore) {
 						otherCard.unplayable = YES;
 						card.unplayable = YES;
-						self.score += matchScore;
-					}
+						self.score += matchScore * MATCH_BONUS;
+					} else {
+                        otherCard.faceUp = NO;
+                        self.score -= MISMATCH_PENALTY;
+                    }
+                    break;
 				}
 			}
+            self.score -=FLIP_COST;
 		}
 		card.faceUp = !card.isFaceUp;
 	}
