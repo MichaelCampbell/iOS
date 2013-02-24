@@ -13,8 +13,10 @@
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *actionLabel;
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *difficultySegmentedControl;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
 
@@ -27,10 +29,23 @@
     return _game;
 }
 
+- (IBAction)difficultyControl:(UISegmentedControl *)sender
+{
+	[self.difficultySegmentedControl setSelectedSegmentIndex:sender.selectedSegmentIndex];
+}
+
 - (void)setCardButtons:(NSArray *)cardButtons
 {
 	_cardButtons = cardButtons;
     [self updateUI];
+}
+- (IBAction)newDeal:(UIButton *)sender
+
+{
+	[self.game resetGame:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+	[self.difficultySegmentedControl setEnabled:YES];
+	self.flipCount = 0;
+	[self updateUI];
 }
 
 - (void)updateUI
@@ -40,10 +55,17 @@
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
         [cardButton setTitle:card.contents forState:UIControlStateSelected | UIControlStateDisabled];        
         cardButton.selected = card.isFaceUp;
+		if (!card.isFaceUp) {
+			[cardButton setTitle:nil forState:UIControlStateNormal];
+			[cardButton setBackgroundImage:[UIImage imageNamed:@"PlayingCard.jpg"] forState:UIControlStateNormal];
+			[cardButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+		}else {
+			[cardButton setBackgroundImage:nil forState:UIControlStateNormal];
+		}
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
-    
+    self.actionLabel.text = self.game.actionText;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 }
 
@@ -55,7 +77,8 @@
 
 - (IBAction)flipCard:(UIButton *)sender
 {
-	[self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
+	[self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender] difficulty:[self.difficultySegmentedControl selectedSegmentIndex]];
+	[self.difficultySegmentedControl setEnabled:NO];
     self.flipCount++;
     [self updateUI];
 }

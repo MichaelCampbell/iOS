@@ -14,10 +14,15 @@
 - (id)initWithCardCount:(NSUInteger)cardCount
 			  usingDeck:(Deck *)deck; //designated initializer
 
-- (void)flipCardAtIndex:(NSUInteger)index;
+- (void)flipCardAtIndex:(NSUInteger)index
+			 difficulty:(BOOL)hard;
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
+- (id)resetGame:(NSUInteger)cardCount
+		usingDeck:(Deck *)deck;
+
 @property (nonatomic, readonly) int score;
+@property (nonatomic, readonly) NSString *actionText;
 
 @end

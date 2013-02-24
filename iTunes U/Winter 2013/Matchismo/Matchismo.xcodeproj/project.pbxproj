@@ -23,6 +23,8 @@
 		209DD1C716D1A80D00257667 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 209DD1C616D1A80D00257667 /* Deck.m */; };
 		209DD1CA16D1A82300257667 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 209DD1C916D1A82300257667 /* PlayingCard.m */; };
 		209DD1CD16D1A83E00257667 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 209DD1CC16D1A83E00257667 /* PlayingCardDeck.m */; };
+		20B12FFF16D957640057FB5E /* PlayingCard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B12FFE16D957640057FB5E /* PlayingCard.jpg */; };
+		20B1300316D975E50057FB5E /* CardGameBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B1300216D975E50057FB5E /* CardGameBackground.jpg */; };
 		27A0E7B016D6C968009F6A9D /* joker.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A0E7AF16D6C968009F6A9D /* joker.png */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +55,9 @@
 		209DD1C916D1A82300257667 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		209DD1CB16D1A83E00257667 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		209DD1CC16D1A83E00257667 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
-		27A0E7AF16D6C968009F6A9D /* joker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joker.png; sourceTree = "<group>"; };
+		20B12FFE16D957640057FB5E /* PlayingCard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PlayingCard.jpg; sourceTree = "<group>"; };
+		20B1300216D975E50057FB5E /* CardGameBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CardGameBackground.jpg; sourceTree = "<group>"; };
+		27A0E7AF16D6C968009F6A9D /* joker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = joker.png; path = ../joker.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +77,6 @@
 		205F8A4016D188780054E129 = {
 			isa = PBXGroup;
 			children = (
-				27A0E7AF16D6C968009F6A9D /* joker.png */,
 				205F8A5216D188780054E129 /* Matchismo */,
 				205F8A4B16D188780054E129 /* Frameworks */,
 				205F8A4A16D188780054E129 /* Products */,
@@ -112,6 +115,9 @@
 		205F8A5316D188780054E129 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20B1300216D975E50057FB5E /* CardGameBackground.jpg */,
+				20B12FFE16D957640057FB5E /* PlayingCard.jpg */,
+				27A0E7AF16D6C968009F6A9D /* joker.png */,
 				205F8A5B16D188780054E129 /* CardGameAppDelegate.h */,
 				205F8A5C16D188780054E129 /* CardGameAppDelegate.m */,
 				205F8A5416D188780054E129 /* Matchismo-Info.plist */,
@@ -217,6 +223,8 @@
 				205F8A6316D188780054E129 /* Default-568h@2x.png in Resources */,
 				205F8A6616D188780054E129 /* MainStoryboard.storyboard in Resources */,
 				27A0E7B016D6C968009F6A9D /* joker.png in Resources */,
+				20B12FFF16D957640057FB5E /* PlayingCard.jpg in Resources */,
+				20B1300316D975E50057FB5E /* CardGameBackground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +330,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
 				INFOPLIST_FILE = "Matchismo/Matchismo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -333,6 +342,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
 				INFOPLIST_FILE = "Matchismo/Matchismo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
