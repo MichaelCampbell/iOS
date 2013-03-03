@@ -80,7 +80,7 @@
 								self.actionText = [NSString stringWithFormat:@"Matched %@ & %@", card.contents, secondCard.contents];
 								if (thirdCard.isFaceUp && !thirdCard.isUnplayable && secondCard != thirdCard && card != thirdCard && card != secondCard) {
 									int hardMatchScore = [card match:@[secondCard, thirdCard]];
-									if (hardMatchScore) {
+									if (hardMatchScore == 3 || hardMatchScore == 12) {
 										thirdCard.unplayable = YES;
 										secondCard.unplayable = YES;
 										card.unplayable = YES;

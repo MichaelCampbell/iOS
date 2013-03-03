@@ -22,11 +22,13 @@
             score = 4;
         }
     } else if (otherCards.count > 1) {
-		for (PlayingCard *card in otherCards) {
-			if ([card.suit isEqualToString:self.suit]) {
-				score += 1;
-			} else if (card.rank == self.rank){
-				score += 4;
+		for (PlayingCard *thirdCard in otherCards) {
+			for (PlayingCard *secondCard in otherCards) {
+				if ([secondCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:thirdCard.suit]) {
+					score = 3;
+				} else if (secondCard.rank == self.rank && thirdCard.rank == secondCard.rank){
+					score = 12;
+				}
 			}
 		}
 	}
