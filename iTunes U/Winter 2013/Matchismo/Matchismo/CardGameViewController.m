@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *actionLabel;
 @property (nonatomic) int flipCount;
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (strong, nonatomic) NSMutableArray *actionHistory;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *difficultySegmentedControl;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
@@ -29,9 +31,26 @@
     return _game;
 }
 
+- (NSMutableArray *)actionHistory
+{
+	if (!_actionHistory) _actionHistory = [[NSMutableArray alloc] init];
+		
+	return _actionHistory;
+}
+
 - (IBAction)difficultyControl:(UISegmentedControl *)sender
 {
 	[self.difficultySegmentedControl setSelectedSegmentIndex:sender.selectedSegmentIndex];
+}
+
+- (IBAction)actionHistorySlider:(UISlider *)sender
+{
+	if ((int)sender.value == [self.actionHistory count] -1) {
+		self.actionLabel.alpha = 1.0;
+	} else
+		self.actionLabel.alpha = 0.3;
+	
+	self.actionLabel.text = [self.actionHistory objectAtIndex:(int)sender.value];
 }
 
 - (void)setCardButtons:(NSArray *)cardButtons
@@ -65,8 +84,18 @@
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
-    self.actionLabel.text = self.game.actionText;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+	[self updateUISlider];
+}
+
+- (void)updateUISlider
+{
+	[self.actionHistory addObject:[NSString stringWithFormat:@"%@", self.game.actionText]];
+	[self.historySlider setMinimumValue:1];
+	[self.historySlider setMaximumValue:[self.actionHistory count] -1];
+	[self.historySlider setValue:[self.actionHistory count]-1 animated:YES];
+	self.actionLabel.text = [self.actionHistory objectAtIndex:self.historySlider.value];
+	NSLog(@"value = %@", [self.actionHistory lastObject]);
 }
 
 - (void)setFlipCount:(int)flipCount
