@@ -22,16 +22,18 @@
             score = 4;
         }
     } else if (otherCards.count > 1) {
-		PlayingCard *originalCard;
-		originalCard.rank = self.rank;
-		originalCard.suit = self.suit;
+        NSLog(@"original card contents: %@", self.contents);
 		for (PlayingCard *thirdCard in otherCards) {
+            NSLog(@"third card contents: %@", thirdCard.contents);
 			for (PlayingCard *secondCard in otherCards) {
-				if ([secondCard.suit isEqualToString:originalCard.suit] && [secondCard.suit isEqualToString:thirdCard.suit]) {
-					score = 3;
-				} else if (secondCard.rank == originalCard.rank && thirdCard.rank == secondCard.rank){
-					score = 12;
-				}
+                if (secondCard != thirdCard) {
+                    NSLog(@"second card contents: %@", secondCard.contents);
+                    if ([secondCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:thirdCard.suit]) {
+                        score = 3;
+                    } else if (secondCard.rank == self.rank && thirdCard.rank == secondCard.rank){
+                        score = 12;
+                    }
+                }
 			}
 		}
 	}

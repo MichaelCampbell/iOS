@@ -24,6 +24,11 @@
 
 @implementation CardGameViewController
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.historySlider setEnabled:NO];
+}
+
 - (CardMatchingGame *)game
 {
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
@@ -63,6 +68,7 @@
 {
 	self.game = nil;
 	[self.difficultySegmentedControl setEnabled:YES];
+    [self.historySlider setEnabled:NO];
 	self.actionHistory = nil;
 	self.flipCount = 0;
 	[self updateUI];
@@ -112,6 +118,7 @@
 - (IBAction)flipCard:(UIButton *)sender
 {
 	[self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender] difficulty:[self.difficultySegmentedControl selectedSegmentIndex]];
+    self.historySlider.enabled ? nil : [self.historySlider setEnabled:YES];
 	[self.difficultySegmentedControl setEnabled:NO];
     self.flipCount++;
     [self updateUI];
