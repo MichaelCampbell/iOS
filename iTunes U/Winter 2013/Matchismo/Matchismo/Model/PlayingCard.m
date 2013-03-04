@@ -24,9 +24,9 @@
     } else if (otherCards.count > 1) {
 		for (PlayingCard *thirdCard in otherCards) {
 			for (PlayingCard *secondCard in otherCards) {
-				if ([secondCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:thirdCard.suit]) {
+				if ([secondCard.suit isEqualToString:self.suit] && [secondCard.suit isEqualToString:thirdCard.suit] && [thirdCard.suit isEqualToString:self.suit]) {
 					score = 3;
-				} else if (secondCard.rank == self.rank && thirdCard.rank == secondCard.rank){
+				} else if (secondCard.rank == self.rank && thirdCard.rank == secondCard.rank && thirdCard.rank == self.rank){
 					score = 12;
 				}
 			}

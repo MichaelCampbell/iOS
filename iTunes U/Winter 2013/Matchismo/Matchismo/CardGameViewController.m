@@ -61,8 +61,9 @@
 - (IBAction)newDeal:(UIButton *)sender
 
 {
-	[self.game resetGame:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+	self.game = nil;
 	[self.difficultySegmentedControl setEnabled:YES];
+	self.actionHistory = nil;
 	self.flipCount = 0;
 	[self updateUI];
 }
@@ -94,7 +95,11 @@
 	[self.historySlider setMinimumValue:1];
 	[self.historySlider setMaximumValue:[self.actionHistory count] -1];
 	[self.historySlider setValue:[self.actionHistory count]-1 animated:YES];
-	self.actionLabel.text = [self.actionHistory objectAtIndex:self.historySlider.value];
+	if (self.game.score) {
+		self.actionLabel.text = [self.actionHistory objectAtIndex:self.historySlider.value];
+	} else {
+		self.actionLabel.text = @"";
+	}
 	NSLog(@"value = %@", [self.actionHistory lastObject]);
 }
 

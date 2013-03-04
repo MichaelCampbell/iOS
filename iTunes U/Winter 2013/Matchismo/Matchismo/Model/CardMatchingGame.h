@@ -19,9 +19,6 @@
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-- (id)resetGame:(NSUInteger)cardCount
-		usingDeck:(Deck *)deck;
-
 @property (nonatomic, readonly) int score;
 @property (nonatomic, readonly) NSString *actionText;
 

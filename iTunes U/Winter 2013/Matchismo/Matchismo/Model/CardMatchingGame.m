@@ -44,14 +44,6 @@
 	return self;
 }
 
-- (id)resetGame:(NSUInteger)cardCount
-		usingDeck:(Deck *)deck
-{
-	self.score = 0;
-	self.actionText = nil;
-	return [self initWithCardCount:cardCount usingDeck:deck];
-}
-
 - (Card *)cardAtIndex:(NSUInteger)index
 {
 	return (index < [self.cards count]) ? self.cards[index] : nil;
