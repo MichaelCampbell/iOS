@@ -10,6 +10,16 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) ArithmeticOperations *objArithmeticOperation;
+@property (strong, nonatomic) IBOutlet UITextField *txtValue1;
+@property (strong, nonatomic) IBOutlet UITextField *txtValue2;
+@property (weak, nonatomic) IBOutlet UIButton *AddButton;
+@property (weak, nonatomic) IBOutlet UIButton *SubtractButton;
+
+@property (strong, nonatomic) IBOutlet UILabel *lblResult;
+//- (IBAction)btnAdd_Click:(id)sender;
+//- (IBAction)btnSub_Click:(id)sender;
+- (IBAction)btnPerformArithmetic:(id)sender;
+- (IBAction)showAlert:(UIButton *)sender;
 
 @end
 
@@ -20,7 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 //    [self testHarness];
-    [self looping];
+//    [self looping];
 }
 
 - (void)didReceiveMemoryWarning
@@ -160,6 +170,113 @@
         i++;
     }
     
+    
+    //Switch
+    switch (i) {
+        case 1:
+            NSLog(@"i is 1");
+            break;
+        case 2:
+            NSLog(@"i is 2");
+            break;
+        case 4:
+            NSLog(@"i is 4");
+            break;
+        default:
+            NSLog(@"i is not 1, 2 or 4");
+            break;
+    }
+}
+
+//- (IBAction)btnAdd_Click:(id)sender
+//{
+//    //check txtVal1 and txtVal2 for values
+//    if (self.txtValue1.text.length > 0
+//        && self.txtValue2.text.length > 0) {
+//    
+//        self.objArithmeticOperation.intValue1 = [self.txtValue1.text floatValue];
+//        self.objArithmeticOperation.intValue2 = [self.txtValue2.text floatValue];
+//        
+//        self.lblResult.text =
+//        [NSString stringWithFormat:@"Result: %.02f", [self.objArithmeticOperation Add]];
+//    }
+//    else if (!self.txtValue1.text.length > 0
+//               || !self.txtValue2.text.length > 0)
+//    {
+//        self.lblResult.text = @"Please enter both values";
+//    }
+//    
+//}
+//
+//- (IBAction)btnSub_Click:(id)sender
+//{
+//    //check txtVal1 and txtVal2 for values
+//    if (self.txtValue1.text.length > 0
+//        && self.txtValue2.text.length > 0) {
+//        
+//        self.objArithmeticOperation.intValue1 = [self.txtValue1.text integerValue];
+//        self.objArithmeticOperation.intValue2 = [self.txtValue2.text integerValue];
+//        
+//        self.lblResult.text =
+//        [NSString stringWithFormat:@"Result: %.02f", [self.objArithmeticOperation Sub]];
+//    }
+//    else if (!self.txtValue1.text.length > 0
+//               || !self.txtValue2.text.length > 0)
+//    {
+//        self.lblResult.text = @"Please enter both values";
+//    }
+//}
+
+- (IBAction)btnPerformArithmetic:(UIButton *)sender
+{
+    //check txtVal1 and txtVal2 for values
+    if (self.txtValue1.text.length > 0
+        && self.txtValue2.text.length > 0) {
+        
+        self.objArithmeticOperation.intValue1 = [self.txtValue1.text floatValue];
+        self.objArithmeticOperation.intValue2 = [self.txtValue2.text floatValue];
+        
+        NSString *resultmsg = [[NSString alloc] init];
+        
+        if ([sender isEqual:self.AddButton]) {
+            resultmsg = [NSString stringWithFormat:@"Result: %.4f", [self.objArithmeticOperation Add]];
+        } else if ([sender isEqual:self.SubtractButton]){
+            resultmsg = [NSString stringWithFormat:@"Result: %.4f", [self.objArithmeticOperation Sub]];
+        }
+        
+        self.lblResult.text = resultmsg;
+    }
+    else if (!self.txtValue1.text.length > 0
+             || !self.txtValue2.text.length > 0)
+    {
+        self.lblResult.text = @"Please enter both values";
+    }
+
+}
+
+- (IBAction)showAlert:(UIButton *)sender
+{
+    [self callAlertView];
+}
+
+- (void) callAlertView
+{
+    UIAlertView *objAlertView = [[UIAlertView alloc] initWithTitle:@"Obj C Sample"
+                                                           message:@" This is a test message"
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Cancel"
+                                                 otherButtonTitles:@"Button1", @"Button2", @"Button3", @"Button4", @"Button5", @"Button6", nil];
+    
+    [objAlertView show];
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"clicked button at index %i", buttonIndex);
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Button5"]) {
+        NSLog(@"Pressed Button5");
+    }
+//    [alertView buttonTitleAtIndex:buttonIndex] ;
 }
 
 @end

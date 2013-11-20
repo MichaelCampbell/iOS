@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Michael Campbell. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "ArithmeticOperations.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIAlertViewDelegate>
 
 @end

@@ -10,18 +10,18 @@
 
 @implementation ArithmeticOperations
 
-- (int) Add
+- (float) Add
 {
     return self.intValue1 + self.intValue2;
 }
 
-- (int) Sub
+- (float) Sub
 {
     return self.intValue1 - self.intValue2;
 }
 
-- (int) MultiplyValues:(int)firstVal
-              andValue:(int)secondVal
+- (float) MultiplyValues:(float)firstVal
+              andValue:(float)secondVal
 {
     return firstVal * secondVal;
 }

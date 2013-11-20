@@ -10,12 +10,12 @@
 
 @interface ArithmeticOperations : NSObject
 
-@property (nonatomic, assign) int intValue1;
-@property (nonatomic, assign) int intValue2;
+@property (nonatomic, assign) float intValue1;
+@property (nonatomic, assign) float intValue2;
 
-- (int) Add;
-- (int) Sub;
-- (int) MultiplyValues: (int) firstVal
-              andValue: (int) secondVal;
+- (float) Add;
+- (float) Sub;
+- (float) MultiplyValues: (float) firstVal
+              andValue: (float) secondVal;
 
 @end
