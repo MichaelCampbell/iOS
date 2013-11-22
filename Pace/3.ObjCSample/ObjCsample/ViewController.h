@@ -9,6 +9,6 @@
 @import UIKit;
 #import "ArithmeticOperations.h"
 
-@interface ViewController : UIViewController <UIAlertViewDelegate>
+@interface ViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate>
 
 @end

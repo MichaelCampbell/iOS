@@ -22,6 +22,7 @@
 		2748C83518359140005A70E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2748C83318359140005A70E1 /* InfoPlist.strings */; };
 		2748C83718359140005A70E1 /* ObjCsampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2748C83618359140005A70E1 /* ObjCsampleTests.m */; };
 		2748C842183592A6005A70E1 /* ArithmeticOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2748C841183592A6005A70E1 /* ArithmeticOperations.m */; };
+		27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE0311183ED4EB0016655C /* PickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		2748C83618359140005A70E1 /* ObjCsampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCsampleTests.m; sourceTree = "<group>"; };
 		2748C840183592A6005A70E1 /* ArithmeticOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticOperations.h; sourceTree = "<group>"; };
 		2748C841183592A6005A70E1 /* ArithmeticOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticOperations.m; sourceTree = "<group>"; };
+		27BE0310183ED4EB0016655C /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		27BE0311183ED4EB0016655C /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 		2748C81118359140005A70E1 /* ObjCsample */ = {
 			isa = PBXGroup;
 			children = (
+				27BE0310183ED4EB0016655C /* PickerViewController.h */,
+				27BE0311183ED4EB0016655C /* PickerViewController.m */,
 				2748C81A18359140005A70E1 /* AppDelegate.h */,
 				2748C81B18359140005A70E1 /* AppDelegate.m */,
 				2748C81D18359140005A70E1 /* Main.storyboard */,
@@ -256,6 +261,7 @@
 			files = (
 				2748C82218359140005A70E1 /* ViewController.m in Sources */,
 				2748C81C18359140005A70E1 /* AppDelegate.m in Sources */,
+				27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */,
 				2748C81818359140005A70E1 /* main.m in Sources */,
 				2748C842183592A6005A70E1 /* ArithmeticOperations.m in Sources */,
 			);
@@ -466,6 +472,7 @@
 				2748C83C18359140005A70E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2748C83D18359140005A70E1 /* Build configuration list for PBXNativeTarget "ObjCsampleTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				2748C83F18359140005A70E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
