@@ -22,6 +22,7 @@
 		2748C83518359140005A70E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2748C83318359140005A70E1 /* InfoPlist.strings */; };
 		2748C83718359140005A70E1 /* ObjCsampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2748C83618359140005A70E1 /* ObjCsampleTests.m */; };
 		2748C842183592A6005A70E1 /* ArithmeticOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2748C841183592A6005A70E1 /* ArithmeticOperations.m */; };
+		278786F818457BBC005CEB97 /* star.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 278786F718457BBC005CEB97 /* star.jpg */; };
 		27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE0311183ED4EB0016655C /* PickerViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		2748C83618359140005A70E1 /* ObjCsampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCsampleTests.m; sourceTree = "<group>"; };
 		2748C840183592A6005A70E1 /* ArithmeticOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticOperations.h; sourceTree = "<group>"; };
 		2748C841183592A6005A70E1 /* ArithmeticOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticOperations.m; sourceTree = "<group>"; };
+		278786F718457BBC005CEB97 /* star.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = star.jpg; sourceTree = "<group>"; };
 		27BE0310183ED4EB0016655C /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		27BE0311183ED4EB0016655C /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 		2748C81218359140005A70E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				278786F618457BBC005CEB97 /* Images */,
 				2748C81318359140005A70E1 /* ObjCsample-Info.plist */,
 				2748C81418359140005A70E1 /* InfoPlist.strings */,
 				2748C81718359140005A70E1 /* main.m */,
@@ -160,6 +163,14 @@
 				2748C83318359140005A70E1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		278786F618457BBC005CEB97 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				278786F718457BBC005CEB97 /* star.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2748C82418359140005A70E1 /* Images.xcassets in Resources */,
+				278786F818457BBC005CEB97 /* star.jpg in Resources */,
 				2748C81618359140005A70E1 /* InfoPlist.strings in Resources */,
 				2748C81F18359140005A70E1 /* Main.storyboard in Resources */,
 			);

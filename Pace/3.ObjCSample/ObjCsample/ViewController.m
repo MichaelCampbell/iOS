@@ -139,8 +139,6 @@
     [self presentViewController:objPickerViewController
                        animated:TRUE
                      completion:nil];
-    
-    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 }
 
 @end

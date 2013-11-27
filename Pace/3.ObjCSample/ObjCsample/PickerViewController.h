@@ -10,4 +10,7 @@
 
 @interface PickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (strong, nonatomic) NSMutableArray *arrComponent0;
+@property (strong, nonatomic) NSMutableArray *arrComponent1;
+
 @end
