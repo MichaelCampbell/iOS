@@ -47,6 +47,7 @@
 
 - (IBAction)btnBack_Click:(UIButton *)sender
 {
+    NSLog(@"DateTime Chosen: %@", [self.objDatePickerView date]);
     [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 

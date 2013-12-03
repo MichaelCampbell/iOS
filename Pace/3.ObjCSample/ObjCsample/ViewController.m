@@ -147,9 +147,9 @@
 {
     UIStoryboard *datePickerStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIDatePickerViewController *datePickerViewController = [datePickerStoryBoard instantiateViewControllerWithIdentifier:@"UIDatePickerViewController"];
-    [self presentViewController: datePickerViewController
-                         animated:TRUE
-                       completion:nil];
+    [self presentViewController:datePickerViewController
+                       animated:TRUE
+                     completion:nil];
 }
 
 @end
