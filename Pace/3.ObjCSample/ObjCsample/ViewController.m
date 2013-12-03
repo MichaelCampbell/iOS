@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PickerViewController.h"
+#import "UIDatePickerViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) ArithmeticOperations *objArithmeticOperation;
@@ -22,6 +23,7 @@
 - (IBAction)btnPerformArithmetic:(id)sender;
 - (IBAction)showAlert:(UIButton *)sender;
 - (IBAction)btnPickerView:(UIButton *)sender;
+- (IBAction)btnDatePickerView:(UIButton *)sender;
 
 @end
 
@@ -139,6 +141,15 @@
     [self presentViewController:objPickerViewController
                        animated:TRUE
                      completion:nil];
+}
+
+- (IBAction)btnDatePickerView:(UIButton *)sender
+{
+    UIStoryboard *datePickerStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIDatePickerViewController *datePickerViewController = [datePickerStoryBoard instantiateViewControllerWithIdentifier:@"UIDatePickerViewController"];
+    [self presentViewController: datePickerViewController
+                         animated:TRUE
+                       completion:nil];
 }
 
 @end
