@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SampleTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
+@property (nonatomic, retain) NSMutableArray *arrContactFriends;
+@property (nonatomic, retain) NSMutableArray *arrContactEmergency;
 @end
