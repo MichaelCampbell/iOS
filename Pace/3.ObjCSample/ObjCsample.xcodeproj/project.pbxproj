@@ -29,6 +29,7 @@
 		27B4A46418515A9F008E1F63 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B4A46318515A9F008E1F63 /* CustomTableViewCell.m */; };
 		27B4A46618515AEA008E1F63 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */; };
 		27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE0311183ED4EB0016655C /* PickerViewController.m */; };
+		27E15C071857EC1A00269D7A /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E15C061857EC1A00269D7A /* CustomButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		27BE0310183ED4EB0016655C /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		27BE0311183ED4EB0016655C /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		27E15C051857EC1A00269D7A /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton.h; path = ObjCsample/CustomButton.h; sourceTree = "<group>"; };
+		27E15C061857EC1A00269D7A /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton.m; path = ObjCsample/CustomButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 		2748C7FF1835913F005A70E1 = {
 			isa = PBXGroup;
 			children = (
+				27E15C051857EC1A00269D7A /* CustomButton.h */,
+				27E15C061857EC1A00269D7A /* CustomButton.m */,
 				2748C81118359140005A70E1 /* ObjCsample */,
 				2748C83018359140005A70E1 /* ObjCsampleTests */,
 				2748C80A18359140005A70E1 /* Frameworks */,
@@ -301,6 +306,7 @@
 				27AF7FD6184D940A00BB197D /* UIDatePickerViewController.m in Sources */,
 				27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */,
 				27B4A46418515A9F008E1F63 /* CustomTableViewCell.m in Sources */,
+				27E15C071857EC1A00269D7A /* CustomButton.m in Sources */,
 				2748C81818359140005A70E1 /* main.m in Sources */,
 				274B06A3184E9E1800A67B79 /* SampleTableViewController.m in Sources */,
 				2748C842183592A6005A70E1 /* ArithmeticOperations.m in Sources */,

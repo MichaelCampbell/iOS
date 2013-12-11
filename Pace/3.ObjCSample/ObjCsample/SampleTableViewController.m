@@ -70,7 +70,7 @@
     objContact0.City = @"New York";
     objContact0.State = @"NY";
     objContact0.Zip = @"10038";
-    objContact0.Mobile = @"973-568-8956";
+    objContact0.Mobile = @"123-456-7890";
     objContact0.Email = @"info@pace.edu";
     [self.arrContactEmergency addObject:objContact0];
     
@@ -149,29 +149,69 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView
           cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:CellIdentifier];
-        cell.detailTextLabel.numberOfLines = 2;
-    }
-    
-//    switch (indexPath.section) {
-//        case 0:
-//            cell.textLabel.text = [[self.friends objectAtIndex:indexPath.row] name];
-//            cell.textLabel.textColor = [UIColor blueColor];
-//            cell.detailTextLabel.text = [[self.friends objectAtIndex:indexPath.row] details];
-//            break;
-//        case 1:
-//            cell.textLabel.text = [[self.emergency objectAtIndex:indexPath.row] name];
-//            cell.textLabel.textColor = [UIColor redColor];
-//            cell.detailTextLabel.text = [[self.emergency objectAtIndex:indexPath.row] details];
-//            break;
-//        default:
-//            break;
+//    static NSString *CellIdentifier = @"Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+//                                      reuseIdentifier:CellIdentifier];
+//        cell.detailTextLabel.numberOfLines = 2;
 //    }
+//    
+////    switch (indexPath.section) {
+////        case 0:
+////            cell.textLabel.text = [[self.friends objectAtIndex:indexPath.row] name];
+////            cell.textLabel.textColor = [UIColor blueColor];
+////            cell.detailTextLabel.text = [[self.friends objectAtIndex:indexPath.row] details];
+////            break;
+////        case 1:
+////            cell.textLabel.text = [[self.emergency objectAtIndex:indexPath.row] name];
+////            cell.textLabel.textColor = [UIColor redColor];
+////            cell.detailTextLabel.text = [[self.emergency objectAtIndex:indexPath.row] details];
+////            break;
+////        default:
+////            break;
+////    }
+//    
+//    Contact *objContact;
+//    
+//    if (indexPath.section == 0) {
+//        objContact = [self.arrContactFriends objectAtIndex:indexPath.row];
+//    } else {
+//        objContact = [self.arrContactEmergency objectAtIndex:indexPath.row];
+//    }
+//
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@, %@", objContact.LastName, objContact.FirstName];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\n%@, %@ %@", objContact.Street, objContact.City, objContact.State, objContact.Zip];
+//    
+//    cell.imageView.image = [UIImage imageNamed:@"star.jpg"];
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    return cell;
+    
+    static NSString *CellIdentifier = @"CustomCell";
+    NSArray *topLevelObjects;
+    
+    CustomTableViewCell *objCell = (CustomTableViewCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (objCell == nil) {
+        topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell"
+                                                        owner:nil
+                                                      options:nil];
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[CustomTableViewCell class]]) {
+                objCell = (CustomTableViewCell *) currentObject;
+                [objCell.btnCall addTarget:self
+                                    action:@selector(btnCall:)
+                          forControlEvents:UIControlEventTouchUpInside];
+                [objCell.btnEmail addTarget:self
+                                     action:@selector(btnEmail:)
+                           forControlEvents:UIControlEventTouchUpInside];
+                [objCell.btnWebsite addTarget:self
+                                       action:@selector(btnWebsite:)
+                             forControlEvents:UIControlEventTouchUpInside];
+            }
+        }
+    }
     
     Contact *objContact;
     
@@ -180,13 +220,74 @@
     } else {
         objContact = [self.arrContactEmergency objectAtIndex:indexPath.row];
     }
+
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@, %@", objContact.LastName, objContact.FirstName];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\n%@, %@ %@", objContact.Street, objContact.City, objContact.State, objContact.Zip];
+    objCell.lbl1.text = [NSString stringWithFormat:@"%@, %@", objContact.LastName, objContact.FirstName];
+    objCell.lbl2.text = [NSString stringWithFormat:@"%@\n%@, %@ %@", objContact.Street, objContact.City, objContact.State, objContact.Zip];
     
-    cell.imageView.image = [UIImage imageNamed:@"star.jpg"];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    return cell;
+    objCell.btnCall.strData = objContact.Mobile;
+    objCell.btnEmail.strData = objContact.Email;
+    objCell.btnWebsite.strData = objContact.Website;
+    
+    objCell.imageView1.image = [UIImage imageNamed:@"star.jpg"];
+    objCell.imageView2.image = [UIImage imageNamed:@"star.jpg"];
+    objCell.imageView3.image = [UIImage imageNamed:@"star.jpg"];
+    objCell.imageView4.image = [UIImage imageNamed:@"star.jpg"];
+    
+    return objCell;
+}
+
+- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *objStoryBoard = [UIStoryboard storyboardWithName:@"Main"
+                                                            bundle:nil];
+    PickerViewController *objPickerViewController = [objStoryBoard instantiateViewControllerWithIdentifier:@"PickerViewController"];
+    if (indexPath.section == 0) {
+        objPickerViewController.objContact = [self.arrContactFriends objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        objPickerViewController.objContact = [self.arrContactEmergency objectAtIndex:indexPath.row];
+    }
+    objPickerViewController.name = @"Bob";
+    [self presentViewController:objPickerViewController
+                       animated:YES
+                     completion:nil];
+    
+}
+
+- (IBAction)btnCall:(id)sender
+{
+    CustomButton *objButton = (CustomButton *) sender;
+    
+    UIAlertView *objAlertView = [[UIAlertView alloc] initWithTitle:objButton.strData
+                                                           message:@""
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Cancel"
+                                                 otherButtonTitles:nil];
+    [objAlertView show];
+}
+
+- (IBAction)btnEmail:(id)sender
+{
+    CustomButton *objButton = (CustomButton *) sender;
+    UIAlertView *objAlertView = [[UIAlertView alloc] initWithTitle:objButton.strData
+                                                           message:@""
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Cancel"
+                                                 otherButtonTitles:nil];
+    [objAlertView show];
+}
+
+- (IBAction)btnWebsite:(id)sender
+{
+    CustomButton *objButton = (CustomButton *) sender;
+    UIAlertView *objAlertView = [[UIAlertView alloc] initWithTitle:objButton.strData
+                                                           message:@""
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Cancel"
+                                                 otherButtonTitles:nil];
+    [objAlertView show];
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -213,7 +314,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75;
+    return 170;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

@@ -42,6 +42,14 @@
     self.arrComponent1 = [[NSMutableArray alloc] initWithObjects:@"Red", @"Blue", @"Green", @"Yellow", nil];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    if (self.name) {
+        [self.arrComponent0 addObject:self.name];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

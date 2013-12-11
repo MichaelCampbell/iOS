@@ -20,5 +20,6 @@
 @property (retain, nonatomic) NSString *Zip;
 @property (retain, nonatomic) NSString *Mobile;
 @property (retain, nonatomic) NSString *Email;
+@property (retain, nonatomic) NSString *Website;
 
 @end

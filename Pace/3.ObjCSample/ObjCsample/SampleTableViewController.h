@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomTableViewCell.h"
+#import "PickerViewController.h"
 
 @interface SampleTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, retain) NSMutableArray *arrContactFriends;

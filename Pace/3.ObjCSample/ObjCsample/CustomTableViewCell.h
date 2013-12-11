@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomButton.h"
 
 @interface CustomTableViewCell : UITableViewCell
 
@@ -18,8 +19,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *lbl1;
 @property (nonatomic, retain) IBOutlet UILabel *lbl2;
 
-@property (nonatomic, retain) IBOutlet UIButton *btnCall;
-@property (nonatomic, retain) IBOutlet UIButton *btnEmail;
-@property (nonatomic, retain) IBOutlet UIButton *btnWebsite;
+@property (nonatomic, retain) IBOutlet CustomButton *btnCall;
+@property (nonatomic, retain) IBOutlet CustomButton *btnEmail;
+@property (nonatomic, retain) IBOutlet CustomButton *btnWebsite;
 
 @end

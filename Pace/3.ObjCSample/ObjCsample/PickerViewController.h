@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contact.h"
 
 @interface PickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *arrComponent0;
 @property (strong, nonatomic) NSMutableArray *arrComponent1;
+
+@property (strong, nonatomic) Contact *objContact;
+@property (strong, nonatomic) NSString *name;
 
 @end
