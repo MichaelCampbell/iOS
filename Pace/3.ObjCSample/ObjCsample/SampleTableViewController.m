@@ -45,6 +45,7 @@
     friend0.Zip = @"10038";
     friend0.Mobile = @"973-568-8956";
     friend0.Email = @"info@pace.edu";
+    friend0.Website = @"www.msn.com";
     [self.arrContactFriends addObject:friend0];
     
     //Contact 1
@@ -57,6 +58,7 @@
     friend2.Zip = @"08932";
     friend2.Mobile = @"896-896-8956";
     friend2.Email = @"rich@gmail.com";
+    friend2.Website = @"www.pace.com";
     [self.arrContactFriends addObject:friend2];
     
     
@@ -72,6 +74,7 @@
     objContact0.Zip = @"10038";
     objContact0.Mobile = @"123-456-7890";
     objContact0.Email = @"info@pace.edu";
+    objContact0.Website = @"info.pace.edu";
     [self.arrContactEmergency addObject:objContact0];
     
     //Contact 1
@@ -84,6 +87,7 @@
     objContact1.Zip = @"08932";
     objContact1.Mobile = @"896-896-8956";
     objContact1.Email = @"rich@gmail.com";
+    objContact1.Website = @"rich.gmail.com";
     [self.arrContactEmergency addObject:objContact1];
     
 }

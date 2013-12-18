@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273F48EA18611E86002E0DF5 /* PlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273F48E918611E86002E0DF5 /* PlistViewController.m */; };
 		2748C80C18359140005A70E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2748C80B18359140005A70E1 /* Foundation.framework */; };
 		2748C80E18359140005A70E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2748C80D18359140005A70E1 /* CoreGraphics.framework */; };
 		2748C81018359140005A70E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2748C80F18359140005A70E1 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		273F48E818611E86002E0DF5 /* PlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistViewController.h; sourceTree = "<group>"; };
+		273F48E918611E86002E0DF5 /* PlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistViewController.m; sourceTree = "<group>"; };
 		2748C80818359140005A70E1 /* ObjCsample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCsample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2748C80B18359140005A70E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2748C80D18359140005A70E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -159,6 +162,8 @@
 				27B4A46218515A9F008E1F63 /* CustomTableViewCell.h */,
 				27B4A46318515A9F008E1F63 /* CustomTableViewCell.m */,
 				27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */,
+				273F48E818611E86002E0DF5 /* PlistViewController.h */,
+				273F48E918611E86002E0DF5 /* PlistViewController.m */,
 			);
 			path = ObjCsample;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				2748C82218359140005A70E1 /* ViewController.m in Sources */,
 				2748C81C18359140005A70E1 /* AppDelegate.m in Sources */,
 				27AF7FD6184D940A00BB197D /* UIDatePickerViewController.m in Sources */,
+				273F48EA18611E86002E0DF5 /* PlistViewController.m in Sources */,
 				27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */,
 				27B4A46418515A9F008E1F63 /* CustomTableViewCell.m in Sources */,
 				27E15C071857EC1A00269D7A /* CustomButton.m in Sources */,
