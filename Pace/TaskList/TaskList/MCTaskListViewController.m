@@ -57,15 +57,15 @@
         NSLog(@"%@", self.dataSource);
         self.TaskListInputField.text = nil;
         [self.TaskListTable reloadData];
-//        [self SaveTaskListItems:sender];
+        [self.TaskListInputField resignFirstResponder];
     }
 }
 
-- (void) tableView:(UITableView *)tableView
-didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.TaskListInputField resignFirstResponder];
-}
+//- (void) tableView:(UITableView *)tableView
+//didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self.TaskListInputField resignFirstResponder];
+//}
 
 - (IBAction)SaveTaskListItems:(UIButton *)sender
 {
