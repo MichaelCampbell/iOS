@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCTaskListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MCTaskListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @end

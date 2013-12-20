@@ -24,6 +24,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self.TaskListTable setDataSource:self];
     [self.TaskListTable setDelegate:self];
+    [self.TaskListInputField setDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -50,7 +51,7 @@
     return _dataSource;
 }
 
-- (IBAction)AddTaskListItem:(UIButton *)sender
+- (void)CreateNewTaskListItem
 {
     if ([self.TaskListInputField.text length] > 0) {
         [self.dataSource addObject:[NSString stringWithFormat:@"%@", self.TaskListInputField.text]];
@@ -59,6 +60,17 @@
         [self.TaskListTable reloadData];
         [self.TaskListInputField resignFirstResponder];
     }
+}
+
+- (IBAction)AddTaskListItem:(UIButton *)sender
+{
+    [self CreateNewTaskListItem];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [self CreateNewTaskListItem];
+    return YES;
 }
 
 //- (void) tableView:(UITableView *)tableView
@@ -70,7 +82,8 @@
 - (IBAction)SaveTaskListItems:(UIButton *)sender
 {
     NSString *path = [NSString stringWithFormat:@"%@/Library/Preferences/TaskList.plist", NSHomeDirectory()];
-    [self.dataSource writeToFile:path atomically:NO];
+    [self.dataSource writeToFile:path
+                      atomically:NO];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView

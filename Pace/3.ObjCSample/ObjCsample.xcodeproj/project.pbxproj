@@ -31,6 +31,8 @@
 		27B4A46618515AEA008E1F63 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */; };
 		27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE0311183ED4EB0016655C /* PickerViewController.m */; };
 		27E15C071857EC1A00269D7A /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E15C061857EC1A00269D7A /* CustomButton.m */; };
+		27FE1BE41863D42900009F9B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FE1BE31863D42900009F9B /* libsqlite3.0.dylib */; };
+		27FE1BE71863D44000009F9B /* SqLiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE1BE61863D44000009F9B /* SqLiteViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,10 @@
 		27BE0311183ED4EB0016655C /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		27E15C051857EC1A00269D7A /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton.h; path = ObjCsample/CustomButton.h; sourceTree = "<group>"; };
 		27E15C061857EC1A00269D7A /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton.m; path = ObjCsample/CustomButton.m; sourceTree = "<group>"; };
+		27FE1BE31863D42900009F9B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		27FE1BE51863D44000009F9B /* SqLiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqLiteViewController.h; sourceTree = "<group>"; };
+		27FE1BE61863D44000009F9B /* SqLiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqLiteViewController.m; sourceTree = "<group>"; };
+		27FE1BE81863D68800009F9B /* university.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = university.sqlite; path = ../../../../../Users/mike/Downloads/university.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FE1BE41863D42900009F9B /* libsqlite3.0.dylib in Frameworks */,
 				2748C80E18359140005A70E1 /* CoreGraphics.framework in Frameworks */,
 				2748C81018359140005A70E1 /* UIKit.framework in Frameworks */,
 				2748C80C18359140005A70E1 /* Foundation.framework in Frameworks */,
@@ -131,6 +138,7 @@
 		2748C80A18359140005A70E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27FE1BE31863D42900009F9B /* libsqlite3.0.dylib */,
 				2748C80B18359140005A70E1 /* Foundation.framework */,
 				2748C80D18359140005A70E1 /* CoreGraphics.framework */,
 				2748C80F18359140005A70E1 /* UIKit.framework */,
@@ -164,6 +172,8 @@
 				27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */,
 				273F48E818611E86002E0DF5 /* PlistViewController.h */,
 				273F48E918611E86002E0DF5 /* PlistViewController.m */,
+				27FE1BE51863D44000009F9B /* SqLiteViewController.h */,
+				27FE1BE61863D44000009F9B /* SqLiteViewController.m */,
 			);
 			path = ObjCsample;
 			sourceTree = "<group>";
@@ -192,6 +202,7 @@
 		2748C83118359140005A70E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27FE1BE81863D68800009F9B /* university.sqlite */,
 				2748C83218359140005A70E1 /* ObjCsampleTests-Info.plist */,
 				2748C83318359140005A70E1 /* InfoPlist.strings */,
 			);
@@ -315,6 +326,7 @@
 				27E15C071857EC1A00269D7A /* CustomButton.m in Sources */,
 				2748C81818359140005A70E1 /* main.m in Sources */,
 				274B06A3184E9E1800A67B79 /* SampleTableViewController.m in Sources */,
+				27FE1BE71863D44000009F9B /* SqLiteViewController.m in Sources */,
 				2748C842183592A6005A70E1 /* ArithmeticOperations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
