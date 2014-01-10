@@ -6,10 +6,11 @@
 //  Copyright (c) 2013 Michael Campbell. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import <sqlite3.h>
 
-@interface SqLiteViewController : UIViewController
+@interface SqLiteViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
 @property (nonatomic, readwrite) sqlite3 *database;
 
 @end

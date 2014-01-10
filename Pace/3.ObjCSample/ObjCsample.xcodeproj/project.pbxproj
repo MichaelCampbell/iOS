@@ -30,6 +30,8 @@
 		27B4A46418515A9F008E1F63 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B4A46318515A9F008E1F63 /* CustomTableViewCell.m */; };
 		27B4A46618515AEA008E1F63 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */; };
 		27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE0311183ED4EB0016655C /* PickerViewController.m */; };
+		27D127F7187F723500921E6E /* university.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 27D127F6187F723500921E6E /* university.sqlite */; };
+		27D127F8187F753300921E6E /* university.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 27D127F6187F723500921E6E /* university.sqlite */; };
 		27E15C071857EC1A00269D7A /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E15C061857EC1A00269D7A /* CustomButton.m */; };
 		27FE1BE41863D42900009F9B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FE1BE31863D42900009F9B /* libsqlite3.0.dylib */; };
 		27FE1BE71863D44000009F9B /* SqLiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FE1BE61863D44000009F9B /* SqLiteViewController.m */; };
@@ -81,12 +83,12 @@
 		27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		27BE0310183ED4EB0016655C /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		27BE0311183ED4EB0016655C /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		27D127F6187F723500921E6E /* university.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = university.sqlite; path = ObjCsample/Database/university.sqlite; sourceTree = SOURCE_ROOT; };
 		27E15C051857EC1A00269D7A /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton.h; path = ObjCsample/CustomButton.h; sourceTree = "<group>"; };
 		27E15C061857EC1A00269D7A /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton.m; path = ObjCsample/CustomButton.m; sourceTree = "<group>"; };
 		27FE1BE31863D42900009F9B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		27FE1BE51863D44000009F9B /* SqLiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqLiteViewController.h; sourceTree = "<group>"; };
 		27FE1BE61863D44000009F9B /* SqLiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqLiteViewController.m; sourceTree = "<group>"; };
-		27FE1BE81863D68800009F9B /* university.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = university.sqlite; path = ../../../../../Users/mike/Downloads/university.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +204,7 @@
 		2748C83118359140005A70E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				27FE1BE81863D68800009F9B /* university.sqlite */,
+				27D127F5187F720500921E6E /* Database */,
 				2748C83218359140005A70E1 /* ObjCsampleTests-Info.plist */,
 				2748C83318359140005A70E1 /* InfoPlist.strings */,
 			);
@@ -215,6 +217,14 @@
 				278786F718457BBC005CEB97 /* star.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		27D127F5187F720500921E6E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				27D127F6187F723500921E6E /* university.sqlite */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D127F8187F753300921E6E /* university.sqlite in Resources */,
 				2748C82418359140005A70E1 /* Images.xcassets in Resources */,
 				278786F818457BBC005CEB97 /* star.jpg in Resources */,
 				2748C81618359140005A70E1 /* InfoPlist.strings in Resources */,
@@ -306,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2748C83518359140005A70E1 /* InfoPlist.strings in Resources */,
+				27D127F7187F723500921E6E /* university.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
