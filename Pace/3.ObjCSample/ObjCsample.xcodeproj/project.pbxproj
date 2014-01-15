@@ -30,6 +30,8 @@
 		27B4A46418515A9F008E1F63 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B4A46318515A9F008E1F63 /* CustomTableViewCell.m */; };
 		27B4A46618515AEA008E1F63 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */; };
 		27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE0311183ED4EB0016655C /* PickerViewController.m */; };
+		27C58A80188603A100203A60 /* WebServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C58A7F188603A100203A60 /* WebServiceViewController.m */; };
+		27C58A831886146D00203A60 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C58A821886146D00203A60 /* XMLReader.m */; };
 		27D127F7187F723500921E6E /* university.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 27D127F6187F723500921E6E /* university.sqlite */; };
 		27D127F8187F753300921E6E /* university.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 27D127F6187F723500921E6E /* university.sqlite */; };
 		27E15C071857EC1A00269D7A /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E15C061857EC1A00269D7A /* CustomButton.m */; };
@@ -83,6 +85,10 @@
 		27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		27BE0310183ED4EB0016655C /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		27BE0311183ED4EB0016655C /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		27C58A7E188603A100203A60 /* WebServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceViewController.h; sourceTree = "<group>"; };
+		27C58A7F188603A100203A60 /* WebServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceViewController.m; sourceTree = "<group>"; };
+		27C58A811886146D00203A60 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		27C58A821886146D00203A60 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		27D127F6187F723500921E6E /* university.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = university.sqlite; path = ObjCsample/Database/university.sqlite; sourceTree = SOURCE_ROOT; };
 		27E15C051857EC1A00269D7A /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton.h; path = ObjCsample/CustomButton.h; sourceTree = "<group>"; };
 		27E15C061857EC1A00269D7A /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton.m; path = ObjCsample/CustomButton.m; sourceTree = "<group>"; };
@@ -174,8 +180,8 @@
 				27B4A46518515AEA008E1F63 /* CustomTableViewCell.xib */,
 				273F48E818611E86002E0DF5 /* PlistViewController.h */,
 				273F48E918611E86002E0DF5 /* PlistViewController.m */,
-				27FE1BE51863D44000009F9B /* SqLiteViewController.h */,
-				27FE1BE61863D44000009F9B /* SqLiteViewController.m */,
+				27C58A8618861C9C00203A60 /* Class 12/13 */,
+				27C58A8518861C2100203A60 /* Class 14 */,
 			);
 			path = ObjCsample;
 			sourceTree = "<group>";
@@ -217,6 +223,26 @@
 				278786F718457BBC005CEB97 /* star.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		27C58A8518861C2100203A60 /* Class 14 */ = {
+			isa = PBXGroup;
+			children = (
+				27C58A7E188603A100203A60 /* WebServiceViewController.h */,
+				27C58A7F188603A100203A60 /* WebServiceViewController.m */,
+				27C58A811886146D00203A60 /* XMLReader.h */,
+				27C58A821886146D00203A60 /* XMLReader.m */,
+			);
+			name = "Class 14";
+			sourceTree = "<group>";
+		};
+		27C58A8618861C9C00203A60 /* Class 12/13 */ = {
+			isa = PBXGroup;
+			children = (
+				27FE1BE51863D44000009F9B /* SqLiteViewController.h */,
+				27FE1BE61863D44000009F9B /* SqLiteViewController.m */,
+			);
+			name = "Class 12/13";
 			sourceTree = "<group>";
 		};
 		27D127F5187F720500921E6E /* Database */ = {
@@ -332,7 +358,9 @@
 				2748C82218359140005A70E1 /* ViewController.m in Sources */,
 				2748C81C18359140005A70E1 /* AppDelegate.m in Sources */,
 				27AF7FD6184D940A00BB197D /* UIDatePickerViewController.m in Sources */,
+				27C58A80188603A100203A60 /* WebServiceViewController.m in Sources */,
 				273F48EA18611E86002E0DF5 /* PlistViewController.m in Sources */,
+				27C58A831886146D00203A60 /* XMLReader.m in Sources */,
 				27BE0312183ED4EB0016655C /* PickerViewController.m in Sources */,
 				27B4A46418515A9F008E1F63 /* CustomTableViewCell.m in Sources */,
 				27E15C071857EC1A00269D7A /* CustomButton.m in Sources */,

@@ -34,7 +34,7 @@
 	// Do any additional setup after loading the view.
     self.table.dataSource = self;
     self.table.delegate = self;
-    [self openDBConnection];
+    [self openDBConnection:@"SELECT * FROM STAFF"];
     NSLog(@"%@", self.data);
 }
 
@@ -53,10 +53,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) openDBConnection
+- (void) openDBConnection: (NSString *) query
 {
     NSString *strFromPath;
     NSString *strToPath;
+    
+    if (![query length]) {
+        query = @"SELECT * FROM STUDENT";
+    }
     
     strFromPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"university.sqlite"];
     strToPath = [NSString stringWithFormat:@"%@/Library/Preferences/university.sqlite", NSHomeDirectory()];
@@ -69,7 +73,7 @@
     
     if (sqlite3_open([strToPath UTF8String], &database) == SQLITE_OK)
     {
-        const char *sqlStatement = "SELECT * FROM STUDENT";
+        const char *sqlStatement = [query UTF8String];
         sqlite3_stmt *compiledStatement;
         
         if (sqlite3_prepare(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)
