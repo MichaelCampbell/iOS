@@ -43,6 +43,7 @@
     NSURLRequest * objRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:strURL]
                                                  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                              timeoutInterval:30.0];
+    
     NSURLConnection *objConnection = [[NSURLConnection alloc] initWithRequest:objRequest
                                                                      delegate:self];
     
