@@ -12,10 +12,39 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert
+                                                                           | UIRemoteNotificationTypeBadge
+                                                                           | UIRemoteNotificationTypeSound)];
+    
+    NSLog(@"Running");
+
+    // Populate AirshipConfig.plist with your app's info from https://go.urbanairship.com
+    // or set runtime properties here.
+    UAConfig *config = [UAConfig defaultConfig];
+    
+    // You can also programmatically override the plist values:
+    // config.developmentAppKey = @"YourKey";
+    // etc.
+    
+    // Call takeOff (which creates the UAirship singleton)
+    [UAirship takeOff:config];
+    
+    
+    // Request a custom set of notification types
+    [UAPush shared].notificationTypes = (UIRemoteNotificationTypeBadge |
+                                         UIRemoteNotificationTypeSound |
+                                         UIRemoteNotificationTypeAlert);
+    
     return YES;
 }
-							
+
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"deviceToken = '%@'", [deviceToken description]);
+    NSString *strToken = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"Token = '%@'", strToken);
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
