@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Michael Campbell. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import MapKit;
 
 @interface ViewController : UIViewController
 

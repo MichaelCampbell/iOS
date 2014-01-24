@@ -21,6 +21,8 @@
 		274E819E1891DAA20020E483 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E81801891DAA20020E483 /* UIKit.framework */; };
 		274E81A61891DAA20020E483 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 274E81A41891DAA20020E483 /* InfoPlist.strings */; };
 		274E81A81891DAA20020E483 /* mapsampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E81A71891DAA20020E483 /* mapsampleTests.m */; };
+		274E81B21891DB010020E483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E81B11891DB010020E483 /* MapKit.framework */; };
+		274E81B51891E44C0020E483 /* PinPlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E81B41891E44C0020E483 /* PinPlaceMark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		274E81A31891DAA20020E483 /* mapsampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mapsampleTests-Info.plist"; sourceTree = "<group>"; };
 		274E81A51891DAA20020E483 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		274E81A71891DAA20020E483 /* mapsampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mapsampleTests.m; sourceTree = "<group>"; };
+		274E81B11891DB010020E483 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		274E81B31891E44C0020E483 /* PinPlaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinPlaceMark.h; sourceTree = "<group>"; };
+		274E81B41891E44C0020E483 /* PinPlaceMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinPlaceMark.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274E81B21891DB010020E483 /* MapKit.framework in Frameworks */,
 				274E817F1891DAA20020E483 /* CoreGraphics.framework in Frameworks */,
 				274E81811891DAA20020E483 /* UIKit.framework in Frameworks */,
 				274E817D1891DAA20020E483 /* Foundation.framework in Frameworks */,
@@ -101,6 +107,7 @@
 		274E817B1891DAA20020E483 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				274E81B11891DB010020E483 /* MapKit.framework */,
 				274E817C1891DAA20020E483 /* Foundation.framework */,
 				274E817E1891DAA20020E483 /* CoreGraphics.framework */,
 				274E81801891DAA20020E483 /* UIKit.framework */,
@@ -119,6 +126,8 @@
 				274E81921891DAA20020E483 /* ViewController.m */,
 				274E81941891DAA20020E483 /* Images.xcassets */,
 				274E81831891DAA20020E483 /* Supporting Files */,
+				274E81B31891E44C0020E483 /* PinPlaceMark.h */,
+				274E81B41891E44C0020E483 /* PinPlaceMark.m */,
 			);
 			path = mapsample;
 			sourceTree = "<group>";
@@ -249,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274E81B51891E44C0020E483 /* PinPlaceMark.m in Sources */,
 				274E81931891DAA20020E483 /* ViewController.m in Sources */,
 				274E818D1891DAA20020E483 /* AppDelegate.m in Sources */,
 				274E81891891DAA20020E483 /* main.m in Sources */,
@@ -460,6 +470,7 @@
 				274E81AD1891DAA20020E483 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		274E81AE1891DAA20020E483 /* Build configuration list for PBXNativeTarget "mapsampleTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +479,7 @@
 				274E81B01891DAA20020E483 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
