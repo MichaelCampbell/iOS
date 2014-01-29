@@ -9,6 +9,6 @@
 @import UIKit;
 @import MapKit;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MKMapViewDelegate>
 
 @end

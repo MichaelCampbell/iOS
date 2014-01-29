@@ -23,6 +23,8 @@
 		274E81A81891DAA20020E483 /* mapsampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E81A71891DAA20020E483 /* mapsampleTests.m */; };
 		274E81B21891DB010020E483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274E81B11891DB010020E483 /* MapKit.framework */; };
 		274E81B51891E44C0020E483 /* PinPlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E81B41891E44C0020E483 /* PinPlaceMark.m */; };
+		27508DE41898728C00C1DB98 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27508DE31898728C00C1DB98 /* DetailViewController.m */; };
+		27508DE7189875AF00C1DB98 /* PinLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27508DE6189875AF00C1DB98 /* PinLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		274E81B11891DB010020E483 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		274E81B31891E44C0020E483 /* PinPlaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinPlaceMark.h; sourceTree = "<group>"; };
 		274E81B41891E44C0020E483 /* PinPlaceMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinPlaceMark.m; sourceTree = "<group>"; };
+		27508DE21898728C00C1DB98 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		27508DE31898728C00C1DB98 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		27508DE5189875AF00C1DB98 /* PinLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinLocation.h; sourceTree = "<group>"; };
+		27508DE6189875AF00C1DB98 /* PinLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,12 +128,10 @@
 				274E818B1891DAA20020E483 /* AppDelegate.h */,
 				274E818C1891DAA20020E483 /* AppDelegate.m */,
 				274E818E1891DAA20020E483 /* Main.storyboard */,
-				274E81911891DAA20020E483 /* ViewController.h */,
-				274E81921891DAA20020E483 /* ViewController.m */,
+				27508DE81898765C00C1DB98 /* Model */,
+				27508DE91898766A00C1DB98 /* Controller */,
 				274E81941891DAA20020E483 /* Images.xcassets */,
 				274E81831891DAA20020E483 /* Supporting Files */,
-				274E81B31891E44C0020E483 /* PinPlaceMark.h */,
-				274E81B41891E44C0020E483 /* PinPlaceMark.m */,
 			);
 			path = mapsample;
 			sourceTree = "<group>";
@@ -159,6 +163,28 @@
 				274E81A41891DAA20020E483 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27508DE81898765C00C1DB98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				274E81B31891E44C0020E483 /* PinPlaceMark.h */,
+				274E81B41891E44C0020E483 /* PinPlaceMark.m */,
+				27508DE5189875AF00C1DB98 /* PinLocation.h */,
+				27508DE6189875AF00C1DB98 /* PinLocation.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		27508DE91898766A00C1DB98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				274E81911891DAA20020E483 /* ViewController.h */,
+				274E81921891DAA20020E483 /* ViewController.m */,
+				27508DE21898728C00C1DB98 /* DetailViewController.h */,
+				27508DE31898728C00C1DB98 /* DetailViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27508DE41898728C00C1DB98 /* DetailViewController.m in Sources */,
 				274E81B51891E44C0020E483 /* PinPlaceMark.m in Sources */,
 				274E81931891DAA20020E483 /* ViewController.m in Sources */,
 				274E818D1891DAA20020E483 /* AppDelegate.m in Sources */,
+				27508DE7189875AF00C1DB98 /* PinLocation.m in Sources */,
 				274E81891891DAA20020E483 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

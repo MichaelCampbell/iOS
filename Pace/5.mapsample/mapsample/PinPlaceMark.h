@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSString *myTitle;
 @property (nonatomic, strong) NSString *mySubTitle;
 
+@property (nonatomic, readwrite) int intlocationIndex;
+
 - (instancetype) initWithCoordinate: (CLLocationCoordinate2D) coordinate;
 
 @end
