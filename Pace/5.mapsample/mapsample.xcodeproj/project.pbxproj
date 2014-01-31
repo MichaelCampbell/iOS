@@ -25,6 +25,7 @@
 		274E81B51891E44C0020E483 /* PinPlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E81B41891E44C0020E483 /* PinPlaceMark.m */; };
 		27508DE41898728C00C1DB98 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27508DE31898728C00C1DB98 /* DetailViewController.m */; };
 		27508DE7189875AF00C1DB98 /* PinLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27508DE6189875AF00C1DB98 /* PinLocation.m */; };
+		27593265189B14D800A82CBE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27593264189B14D800A82CBE /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		27508DE31898728C00C1DB98 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		27508DE5189875AF00C1DB98 /* PinLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinLocation.h; sourceTree = "<group>"; };
 		27508DE6189875AF00C1DB98 /* PinLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinLocation.m; sourceTree = "<group>"; };
+		27593264189B14D800A82CBE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27593265189B14D800A82CBE /* CoreLocation.framework in Frameworks */,
 				274E81B21891DB010020E483 /* MapKit.framework in Frameworks */,
 				274E817F1891DAA20020E483 /* CoreGraphics.framework in Frameworks */,
 				274E81811891DAA20020E483 /* UIKit.framework in Frameworks */,
@@ -113,6 +116,7 @@
 		274E817B1891DAA20020E483 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27593264189B14D800A82CBE /* CoreLocation.framework */,
 				274E81B11891DB010020E483 /* MapKit.framework */,
 				274E817C1891DAA20020E483 /* Foundation.framework */,
 				274E817E1891DAA20020E483 /* CoreGraphics.framework */,

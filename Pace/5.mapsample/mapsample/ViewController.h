@@ -8,7 +8,11 @@
 
 @import UIKit;
 @import MapKit;
+@import CoreLocation;
 
-@interface ViewController : UIViewController <MKMapViewDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+
+@property (nonatomic, strong) NSMutableArray *objPinLocations;
+@property (nonatomic, strong) CLLocationManager *objCLManager;
 
 @end

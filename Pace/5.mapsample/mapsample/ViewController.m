@@ -20,7 +20,7 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -36,6 +36,57 @@
     [self loadContents];
     [self zoomIn];
     [self AddPin];
+    [self getMyLocation];
+}
+
+- (void) getMyLocation
+{
+    self.objCLManager = [[CLLocationManager alloc] init];
+    self.objCLManager.delegate = self;
+    self.objCLManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    self.objCLManager.distanceFilter = CLLocationDistanceMax;
+    [self.objCLManager startUpdatingLocation];
+}
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *objLocation;
+    objLocation = [locations lastObject];
+
+    NSLog(@"Latitude: %f", objLocation.coordinate.latitude);
+    NSLog(@"Longitude: %f", objLocation.coordinate.longitude);
+    
+    [self AddPin:objLocation.coordinate];
+    [self GetAddress:objLocation];
+}
+
+- (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"%@", [error description]);
+}
+
+- (void) AddPin:(CLLocationCoordinate2D) location
+{
+    PinPlaceMark *placeMark = [[PinPlaceMark alloc] initWithCoordinate:location];
+    placeMark.myTitle = @"My current location";
+    placeMark.mySubTitle = @"";
+    
+    [self.map addAnnotation:placeMark];
+}
+
+- (void) GetAddress:(CLLocation *)location
+{
+    CLGeocoder *objGeoCoder = [[CLGeocoder alloc] init];
+    
+    [objGeoCoder reverseGeocodeLocation:location
+                      completionHandler:^(NSArray *placemarks, NSError *error)
+                        {
+                            CLPlacemark *objPlaceMark = [placemarks objectAtIndex:0];
+                            NSMutableDictionary *objDict;
+                            objDict = [[NSMutableDictionary alloc] initWithDictionary:objPlaceMark.addressDictionary];
+                            NSString *strAddress = [[objPlaceMark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+                            NSLog(@"%@", strAddress);
+                        }];
 }
 
 - (void) loadContents
