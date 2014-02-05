@@ -17,9 +17,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="PJu-XL-EAw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fza-di-dok">
+                                <rect key="frame" x="20" y="20" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ad Sample">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Y3u-zZ-wWQ" kind="modal" id="vjx-Wo-eD4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -67,6 +77,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lfd-kE-i4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="842" y="35"/>
+        </scene>
+        <!--Ad Sample View Controller-->
+        <scene sceneID="pX5-Tz-s8A">
+            <objects>
+                <viewController id="Y3u-zZ-wWQ" customClass="AdSampleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8dh-Js-AUO"/>
+                        <viewControllerLayoutGuide type="bottom" id="GVN-w5-na4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0iw-JT-kWg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WNe-tq-GaM">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WNe-tq-GaM" secondAttribute="trailing" id="VRx-cq-eCz"/>
+                            <constraint firstItem="WNe-tq-GaM" firstAttribute="top" secondItem="0iw-JT-kWg" secondAttribute="top" constant="20" symbolic="YES" id="d8H-1B-wBZ"/>
+                            <constraint firstAttribute="bottom" secondItem="WNe-tq-GaM" secondAttribute="bottom" id="ljT-x6-LRm"/>
+                            <constraint firstItem="WNe-tq-GaM" firstAttribute="leading" secondItem="0iw-JT-kWg" secondAttribute="leading" id="war-xH-xou"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tblView" destination="WNe-tq-GaM" id="8yE-dZ-yfa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcC-eP-CJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="35"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
