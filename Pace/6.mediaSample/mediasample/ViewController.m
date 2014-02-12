@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "CustomMPMoviePlayerViewController.h"
+@import CoreFoundation;
+@import MobileCoreServices;
 
 @interface ViewController ()
 
@@ -35,6 +38,33 @@
     self.avPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample" ofType:@"mp3"]] error:nil];
     self.avPlayer.delegate = self;
     self.avPlayer.numberOfLoops = 0;
+}
+
+- (IBAction)btnMoviePlay:(UIButton*)sender
+{
+//    @"http://goo.gl/MMOexY"
+    CustomMPMoviePlayerViewController *objMPMoviePlayerController = [[CustomMPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:self.txtField.text]];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(videoFinished:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:objMPMoviePlayerController.moviePlayer];
+    
+    [self presentMoviePlayerViewControllerAnimated:objMPMoviePlayerController];
+}
+
+- (IBAction)btnGetThumbnail:(UIButton *)sender
+{
+    MPMoviePlayerController *objMPMoviePlayerController = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:self.txtField.text]];
+    self.imageView.image = [objMPMoviePlayerController thumbnailImageAtTime:[self.txtTime.text integerValue] timeOption:MPMovieTimeOptionNearestKeyFrame];
+}
+
+- (void) videoFinished:(NSNotification *) notification
+{
+    CustomMPMoviePlayerViewController *objMPMoviePlayerController = [[CustomMPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:@"http://goo.gl/MMOexY"]];
+    [self presentMoviePlayerViewControllerAnimated:objMPMoviePlayerController];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)btnPlay:(id)sender
@@ -101,34 +131,41 @@
 
 - (IBAction)sldMediaValueChanged:(id)sender
 {
-    UISlider *slider= (UISlider *) sender;
-    self.mpPlayer.volume = slider.value;
+//    UISlider *slider= (UISlider *) sender;
+//    self.mpPlayer.volume = slider.value;
 }
 
+- (NSUInteger) supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
 
+- (IBAction)btnlaunchCamera:(UIButton *)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *pickerImage = [[UIImagePickerController alloc] init];
+        pickerImage.sourceType = UIImagePickerControllerSourceTypeCamera;
+        self.view.frame = [[UIScreen mainScreen] applicationFrame];
+        pickerImage.view.frame = [[UIScreen mainScreen] applicationFrame];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:FALSE];
+        pickerImage.delegate = self;
+        
+        [self presentViewController:pickerImage
+                           animated:YES
+                         completion:nil];
+    }
+}
 
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self dismissViewControllerAnimated:TRUE completion:nil];
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    self.imageView.image = nil;
+    [self dismissViewControllerAnimated:TRUE completion:nil];
+}
 
 @end

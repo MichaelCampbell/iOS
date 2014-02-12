@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface ViewController : UIViewController <AVAudioPlayerDelegate,MPMediaPickerControllerDelegate>
+@interface ViewController : UIViewController <AVAudioPlayerDelegate, MPMediaPickerControllerDelegate, UIImagePickerControllerDelegate>
 @property(nonatomic, strong) AVAudioPlayer *avPlayer;
 @property(nonatomic, strong) MPMusicPlayerController *mpPlayer;
 
@@ -26,4 +26,14 @@
 - (IBAction)btnMediaPlay:(id)sender;
 - (IBAction)btnMediaStop:(id)sender;
 - (IBAction)sldMediaValueChanged:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtField;
+- (IBAction)btnMoviePlay:(UIButton *)sender;
+- (IBAction)btnGetThumbnail:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *txtTime;
+
+- (IBAction)btnlaunchCamera:(UIButton *)sender;
+
+
 @end
